@@ -292,7 +292,7 @@ else
         end
 
         %Pre-process data and export to model input fmt
-        filePrefixForHDF5 = ['cerrFile^',ptName];
+        filePrefixForHDF5 = 'cerrFile';
         for nIn = 1:length(inputC)
 
             inputType = inputC{nIn};
