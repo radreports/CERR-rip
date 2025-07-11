@@ -39,9 +39,10 @@ for p = 1:length(ptListC)
                 for n = 2:length(labelsV)
                     mask4M(:,:,:,n-1) = maskArr==labelsV(n);
                 end
-            else
+            elseif ndims(maskArr)==4
                 mask4M = permute(maskArr,[4 3 2 1]); 
             end
+            
             
         case '2D'
             %Stack files
