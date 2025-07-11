@@ -34,15 +34,16 @@ for nRes = 1:length(reservedFieldsC)
     idS = rmfield(idS,reservedFieldsC{nRes});
 end
 
-if ~isempty(idS)
-    idsC = cellfun(@(x)(idS.(x)),fieldnames(idS),'un',0);
-    idListC = num2str(idsC{1});
-    if iscell(idListC)&& length(idListC)>1
-        appendStr = strjoin(idListC,'_');
-    else
-        appendStr = idListC;
-    end
-    outFileName = [outFileName,'_',appendStr];
-end
+%Commented out for brain mets model
+% if ~isempty(idS)
+%     idsC = cellfun(@(x)(idS.(x)),fieldnames(idS),'un',0);
+%     idListC = num2str(idsC{1});
+%     if iscell(idListC)&& length(idListC)>1
+%         appendStr = strjoin(idListC,'_');
+%     else
+%         appendStr = idListC;
+%     end
+%     outFileName = [outFileName,'_',appendStr];
+% end
 
 end

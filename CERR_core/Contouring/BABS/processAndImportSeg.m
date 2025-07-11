@@ -46,7 +46,8 @@ if ~iscell(planC)
         planCfilename = fullfile(cerrPath, planCfilenameC{nFile});
         planC = loadPlanC(planCfilename,tempdir);
         
-        ptIdx = ~cellfun(@isempty, strfind(ptListC, strtok(ptName,'_')));
+        %ptIdx = ~cellfun(@isempty, strfind(ptListC, strtok(ptName,'_')));
+        ptIdx = nFile;
         segMask4M = outC{ptIdx};
 
         [planC,outScanNum] = importLabelMap(userOptS,origScanNumV,scanNumV,...
