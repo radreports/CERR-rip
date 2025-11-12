@@ -46,7 +46,8 @@ if ~iscell(planC)
         planCfilename = fullfile(cerrPath, planCfilenameC{nFile});
         planC = loadPlanC(planCfilename,tempdir);
         
-        ptIdx = ~cellfun(@isempty, strfind(ptListC, strtok(ptName,'_')));
+        %ptIdx = ~cellfun(@isempty, strfind(ptListC, strtok(ptName,'_')));
+        ptIdx = nFile;
         segMask4M = outC{ptIdx};
 
         [planC,outScanNum] = importLabelMap(userOptS,origScanNumV,scanNumV,...
@@ -118,7 +119,7 @@ end
         outScanNum = scanNumV(origScanIdx);
         userOptS.input.scan(outScanNum) = userOptS.input.scan(origScanIdx);
         userOptS.input.scan(outScanNum).origScan = origScanNumV(origScanIdx);
-        [segMask4M,~,~,planC]  = joinH5planC(outScanNum,segMask4M,labelPath,...
+        [segMask4M,~,planC]  = joinH5planC(outScanNum,segMask4M,labelPath,...
             userOptS,planC);
 
         % Post-process segmentation

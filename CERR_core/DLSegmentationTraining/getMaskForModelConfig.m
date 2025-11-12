@@ -291,7 +291,6 @@ for m = 1:length(methodC)
             
         case 'none'
             %Skip
-            in
             maskC{m} = [];
             
         otherwise
